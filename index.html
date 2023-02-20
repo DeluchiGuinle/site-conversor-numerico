@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabriel Deluchi">
+    <meta name="description" content="Site criado para fazer a conversão de valores">
+    <meta name="keywords" content="Binário, Hexadecimal, Octal, Decimal, Conversão">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icone.png" type="image/x-icon">
+    <title>Conversor de Bases Numéricas</title>
+</head>
+<body>
+<div id="particles-js"></div>
+<div class="grid_content">
+    <div class="acessibilidade">
+        <input type="radio" name="contraste" class="buttons_menu" id="contraste_preto" value="preto" onchange="mudarFundo()" checked>
+
+        <input type="radio" name="contraste" class="buttons_menu" id="contraste_branco" value="branco" onchange="mudarFundo()">
+
+        <input type="radio" name="contraste" class="buttons_menu" id="contraste_burlywood" value="burlywood" onchange="mudarFundo()">
+
+        <input  type="radio" name="increase-font" class="buttons_menu" id="increase-font" title="Aumentar Fonte" A+>
+       
+        <input type="radio" name="decrease-font" class="buttons_menu" id="decrease-font" title="Diminuir Fonte" A->
+       
+         
+
+
+        <label class="label label3 fas fa-arrow-up " for="increase-font" id="increase-font"></label>
+        <label class="label label4 fas fa-arrow-down " for="decrease-font" id="decrease-font"></label>
+        <label class="label label2 fas fa-moon " for="contraste_preto" id="label_preto"></label>
+        <label class="label label1 fas fa-sun " for="contraste_branco" id="label_branco"></label>
+
+        <!--
+            <label class="label label3 fas fa-arrow-up " for="Aumentar Fonte" id="label_aumentar"></label>
+            <label class="label label4 fas fa-arrow-down " for="Diminuir Fonte" id="label_diminuir"></label>
+        -->
+        
+    </div>
+
+    <div class="title">
+        <span>Conversor de Bases</span>      
+    </div>
+    <div class="inputs_valores">
+        <form>
+        <p><b>Decimal:</b></p>
+        <input type="text" class="entradas" id="decimal" placeholder="Decimal">
+<br>
+<br>
+<br>
+        <p><b>Binário:</b></p>
+        <input type="text" class="entradas" id="binario" placeholder="Binário">
+<br>
+<br>
+<br>
+        <p><b>Octal:</b></p>
+        <input type="text" class="entradas" id="octal" placeholder="Octal">
+<br>
+<br>
+<br>
+        <p><b>Hexadecimal:</b></p>
+        <input type="text" class="entradas" id="hexadecimal" placeholder="Hexadecimal">
+    </div>
+</div>
+</form>
+
+<script src="js/main.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+<script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous"></script>
+</body>
+</html>
