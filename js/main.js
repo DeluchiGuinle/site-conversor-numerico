@@ -1,10 +1,8 @@
-var x = '35'
-var y = '5.1'
-var z = '50'
-
+const title = document.querySelector(".title");
+const footer = document.querySelector(".footer");
+const body = document.querySelector("body");
 document.documentElement.style.overflow = 'hidden';
 document.body.scroll = "no";
-
 
 const numDecimal = document.querySelector("#decimal");
 const numBinario = document.querySelector("#binario");
@@ -80,15 +78,15 @@ numHexadecimal.addEventListener("keyup", function (evento) {
 
 
 function mudarFundo(){
-    const fundo = document.getElementById('particles-js')
+    
     const body = document.querySelector("body")
     const buttonChecked = document.querySelector('input[name="contraste"]:checked').value;
      
     switch (buttonChecked){
 
         case 'preto':
-            propriedadesParticula.particles.color.value = "#000000";
-            propriedadesParticula.particles.line_linked.color = "#000000";
+            propriedadesParticula.particles.color.value = "#ffffff";
+            propriedadesParticula.particles.line_linked.color = "#ffffff";
             body.classList.remove('white');
             particlesJS('particles-js', propriedadesParticula);
             break
@@ -99,15 +97,10 @@ function mudarFundo(){
             propriedadesParticula.particles.line_linked.color = "#000000";
             body.classList.toggle('white');
             particlesJS('particles-js', propriedadesParticula);
-            break     
-    
+            break        
+        
     }
 }
-
-
-const title = document.querySelector(".title");
-const footer = document.querySelector(".footer");
-const body = document.querySelector("body");
 
 function getValues(){
   return {
@@ -141,23 +134,30 @@ function separateCharacters(){
   return separatedValues
 }
 
-window.onload = function() {
-  var elementBody = document.querySelector('body');
-  var elementBtnIncreaseFont = document.getElementById('increase-font');
-  var elementBtnDecreaseFont = document.getElementById('decrease-font');
-  
-  var body = 100;
-  var increaseDecrease = 10;
+function increaseValues(){
+  const separatedValuesArray = separateCharacters();
+  const increasedValues = []
+  const increasedCenterValues = []
+  separatedValuesArray.forEach(element => {
+    if(Number.isInteger(element)){
 
-  elementBtnIncreaseFont.addEventListener('click', function(event) {
-      body = body + increaseDecrease;
-      elementBody.style.fontSize = body + '%';
+      if(element + 2 < 70){
+        increasedValues.push(element += 2);
+      }else{
+        increasedValues.push(element = 68);
+      }
+
+    }else{
+
+      if(element + 0.2 < 7){
+        increasedCenterValues.push(element += 0.2);
+      }else{
+        increasedCenterValues.push(element = 6.8);
+      }
+    }
   });
 
-  elementBtnDecreaseFont.addEventListener('click', function(event) {
-      body = body - increaseDecrease;
-      elementBody.style.fontSize = body + '%';
-  });
+  addNewValues(increasedValues,increasedCenterValues);
 }
 
 function decreaseValues(){
@@ -191,6 +191,4 @@ function addNewValues(numbers, centerNumbers){
   const newFooter = `clamp(${numbers[2]}px, ${centerNumbers[1]}vw, ${numbers[3]}px)`;
   body.style.setProperty("--fontsize-title", newTitle);
   body.style.setProperty("--fontsize-footer", newFooter);
-  console.log(numbers);
-  console.log(centerNumbers);
 }

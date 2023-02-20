@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
 
 body{
-    --color-font: white;
+    --color-font: black;
     --color-buttonckd: rgb(75, 75, 75);
-    --color-button: white;
+    --color-button: black;
     --color-bg: darkred;
     --color-input: white;
     --font: Radio Canada;
@@ -146,4 +146,3 @@ body.white{
     gap: 10px;
     align-items: center;
 }
-
